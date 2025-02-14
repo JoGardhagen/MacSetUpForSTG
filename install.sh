@@ -24,3 +24,11 @@ fi
 source ~/.zprofile
 source ~/.zshrc
 
+# Kontrollera om VSCode är installerat
+if ! command -v code &> /dev/null
+then
+    echo "Visual Studio Code är inte installerat. Installerar..."
+    brew install --cask visual-studio-code
+else
+    echo "Visual Studio Code är redan installerat!"
+fi
