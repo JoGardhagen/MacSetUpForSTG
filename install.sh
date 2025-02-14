@@ -1,4 +1,19 @@
 #!/bin/bash
+#Kontrollerar Xcode Cli
+if ! xcode-select -p &>/dev/null; then
+    echo "Xcode Command Line Tools saknas. Installerar..."
+    xcode-select --install
+else
+    echo "Xcode Command Line Tools är redan installerat."
+fi
+
+#Kontrollerar Clang++
+if clang++ --version &>/dev/null; then
+    echo "Clang++ är installerat och fungerar!"
+else
+    echo "Clang++ kunde inte hittas. Kontrollera installationen av Xcode Command Line Tools."
+fi
+
 
 # Kontrollera om Homebrew är installerat
 if ! command -v brew &> /dev/null
