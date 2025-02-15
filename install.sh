@@ -1,4 +1,7 @@
 #!/bin/bash
+#To Run chmod +x install.sh
+#./install.sh
+
 #Kontrollerar Xcode Cli
 if ! xcode-select -p &>/dev/null; then
     echo "Xcode Command Line Tools saknas. Installerar..."
