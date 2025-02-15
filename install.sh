@@ -14,7 +14,6 @@ else
     echo "Clang++ kunde inte hittas. Kontrollera installationen av Xcode Command Line Tools."
 fi
 
-
 # Kontrollera om Homebrew är installerat
 if ! command -v brew &> /dev/null
 then
@@ -39,6 +38,14 @@ fi
 source ~/.zprofile
 source ~/.zshrc
 
+# Kontrollera om CMake är installerat
+if ! command -v cmake &> /dev/null; then
+    echo "CMake är inte installerat. Installerar..."
+    brew install cmake
+else
+    echo "CMake är redan installerat!"
+fi
+
 # Kontrollera om VSCode är installerat
 if ! command -v code &> /dev/null
 then
@@ -47,3 +54,14 @@ then
 else
     echo "Visual Studio Code är redan installerat!"
 fi
+
+# Kontrollera om VS Code C++ Extension Pack redan är installerat
+if code --list-extensions | grep -q "ms-vscode.cpptools-extension-pack"; then
+    echo "C++ Extension Pack är redan installerat!"
+else
+    echo "Installerar VS Code C++ Extension Pack..."
+    code --install-extension ms-vscode.cpptools-extension-pack
+    echo "VS Code C++ Extension Pack har installerats!"
+fi
+
+echo "Alla verktyg är nu installerade och klara!"
