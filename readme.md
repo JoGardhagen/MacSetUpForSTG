@@ -52,3 +52,10 @@ Om Visual Studio Code inte finns installerat hämtas och installeras det via Hom
 Om VS Code C++ Extension Pack saknas installeras det automatiskt.
 
 ```
+## RaspPaj
+
+<p>install_rpi2.sh är för raspberry pi
+<br>lägger till clang för att inte använda gnu gcc eller g++.
+<br>Testad och fungerar , att tänka på har man inte uppdaterat Raspberry pi OS
+<br>kommer han att göra det också så att man har det senaste.
+</p>

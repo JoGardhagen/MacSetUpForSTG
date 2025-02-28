@@ -1,3 +1,5 @@
+# NOTE : den här är obsolete fungerar någolunda men använd install_rpi2.sh istället
+
 #!/bin/bash
 
 #Updatera paketlistan
