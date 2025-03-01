@@ -16,9 +16,10 @@ install_if_missing(){
 install_if_missing clang clang
 install_if_missing cmake cmake
 
-echo "Installerar nödvändiga paket för Raylib..."
-sudo apt install -y libasound2-dev libx11-dev libxrandr-dev libxinerama-dev \
-                     libxcursor-dev libxi-dev libgl1-mesa-dev
+#echo "Installerar nödvändiga paket för Raylib..."Raylib är = No Goo! på Rasp Paj suttit halva helgen för o försöka på det hela att fungera
+#kommer inte gå vi får hitta något annat till raspPaj
+#sudo apt install -y libasound2-dev libx11-dev libxrandr-dev libxinerama-dev \
+#                     libxcursor-dev libxi-dev libgl1-mesa-dev
 
 export KEYRING_PATH=/etc/apt/keyrings/package.microsoft.gpg
 export LIST_PATH=/etc/apt/sources.list.d/vscode.list
