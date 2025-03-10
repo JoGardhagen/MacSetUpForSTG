@@ -59,3 +59,10 @@ Om VS Code C++ Extension Pack saknas installeras det automatiskt.
 <br>Testad och fungerar , att tänka på har man inte uppdaterat Raspberry pi OS
 <br>kommer han att göra det också så att man har det senaste.
 </p>
+
+## CppServer
+<p>adress: http://localhost:8080
+<br> berroende : g++ libssl-dev
+<br> Bygg : g++ -o server main.cpp -std=c++17 -lssl -lcrypto
+<br> Går även med clang++ 
+</p>
