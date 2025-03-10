@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspberry Pi Command Interface</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .command-output {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin-top: 10px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Raspberry Pi Command Interface</h1>
+
+        <button class="button" onclick="fetchIP()">Show IP Address</button>
+        <button class="button" onclick="fetchUptime()">Show Uptime</button>
+        <button class="button" onclick="fetchDisk()">Show Disk Usage</button>
+
+        <div id="output" class="command-output">Command output will appear here...</div>
+    </div>
+
+    <script>
+
+        function fetchIP() {
+            fetch('/get_ip')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("output").innerText = "IP Address:\n" + data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+
+        function fetchUptime() {
+            fetch('/get_uptime')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("output").innerText = "Uptime:\n" + data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+
+        function fetchDisk() {
+            fetch('/get_disk')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("output").innerText = "Disk Usage:\n" + data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
