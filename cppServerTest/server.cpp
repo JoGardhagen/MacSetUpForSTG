@@ -50,7 +50,7 @@ int main() {
             res.set_content("404 Not Found", "text/plain");
         }
     });
-
+    std::cout << "[INFO] Server is running on http://localhost:8080\n";
     svr.listen("0.0.0.0", 8080);
 
     return 0;
